@@ -16,7 +16,7 @@ class TodosController extends Controller
     public function index()
     {
         $List = Todos::all();
-        return view('index', $List);
+        return view('index', ['List' => $List]);
     }
 
     /**
