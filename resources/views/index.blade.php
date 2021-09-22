@@ -20,6 +20,15 @@
 			        </tr>
 			        </thead>
 			        <tbody>
+                    @foreach($List as $Todo)
+                        <tr>
+                            <th scope="row">{{$Todo->id}}</th>
+                            <td>Задача один</td>
+                            <td class="alert-danger"><i class="bi bi-emoji-angry"></i></td>
+                            <td><i class="bi bi-trash"></i></td>
+                            <td><i class="bi bi-pencil-square"></i></td>
+                        </tr>
+                    @endforeach
 			        <tr>
 			            <th scope="row">1</th>
 			            <td>Задача один</td>

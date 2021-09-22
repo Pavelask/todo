@@ -21,6 +21,7 @@
                         <input type="text" class="form-control" id="description" aria-describedby="nameHelp" name="description">
                         <div id="nameHelp" class="form-text">Введите описание задачи</div>
                     </div>
+{{--                    <input name="check" type="hidden" value="0">--}}
                     <button type="submit" class="btn btn-info">Создать</button>
                 </form>
             </div>
