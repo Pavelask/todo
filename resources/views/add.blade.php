@@ -10,6 +10,7 @@
             <div class="border border-2 rounded border-info p-4">
                 <form method="post" action="{{route('store')}}">
                 @csrf
+                @method('POST')
                     <div class="mb-3">
                         <label for="name" class="form-label">Задача</label>
                         <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="name">
