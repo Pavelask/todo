@@ -18,7 +18,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="name" class="form-label">Описание</label>
-                        <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="name">
+                        <input type="text" class="form-control" id="description" aria-describedby="nameHelp" name="description">
                         <div id="nameHelp" class="form-text">Введите описание задачи</div>
                     </div>
                     <button type="submit" class="btn btn-info">Создать</button>

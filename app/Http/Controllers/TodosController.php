@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\models\Todos;
+use App\Models\Todos;
 
 
 class TodosController extends Controller
@@ -36,8 +36,9 @@ class TodosController extends Controller
      */
     public function store(Request $request)
     {
-        $todoList = Todos::create($request->all());
-        return redirect()->back()->with('success', 'Запись добавлена');
+        dd($request);
+//        $todoList = Todos::create($request->all());
+//        return redirect()->back()->with('success', 'Запись добавлена');
     }
 
     /**

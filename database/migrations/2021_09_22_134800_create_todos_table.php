@@ -17,7 +17,7 @@ class CreateTodosTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->integer('check');
+            // $table->integer('check');
             $table->timestamps();
         });
     }
