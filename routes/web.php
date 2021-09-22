@@ -18,7 +18,7 @@ use App\Http\Controllers\TodosController;
 //     return view('welcome');
 // });
 
-Route::get('/', [TodosController::class, 'index']);
+//Route::get('/', [TodosController::class, 'index']);
 Route::get('/add', [TodosController::class, 'create']);
 
-//Route::resource('/', 'TodosController::class');
+Route::resource('/', '\App\Http\Controllers\TodosController');
