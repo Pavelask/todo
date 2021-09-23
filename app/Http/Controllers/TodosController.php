@@ -89,8 +89,8 @@ class TodosController extends Controller
             'name.required' => 'Поле ЗАДАЧА обязателна к заполнению!']
         );
 
-        $todoList = Todos::where('id', $id)->update($request->all());
-        return redirect()->route(todos.index)->with('success', 'Запись добавлена');
+        $todoList = Todos::where('id', $id)->update($request->except(['_method', '_token']));
+        return redirect()->route('todos.index')->with('success', 'Запись добавлена');
     }
 
     /**
