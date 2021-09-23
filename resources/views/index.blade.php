@@ -23,8 +23,7 @@
 			            <th scope="col">#</th>
 			            <th scope="col">Имя</th>
                         <th scope="col">Статус</th>
-                        <th scope="col">Редактировать</th>
-                        <th scope="col">Удалить</th>
+                        <th width="120px">Действия</th>
 			        </tr>
 			        </thead>
 			        <tbody>
@@ -35,9 +34,29 @@
                                 <p>{{$Todo->name}}</p>
 {{--                                <p>{{$Todo->description}}</p>--}}
                             </td>
-                            <td class="alert-danger"><i class="bi bi-emoji-angry"></i></td>
-                            <td><a href="todos/{{$Todo->id}}/edit"><i class="bi bi-pencil-square"></i></a></td>
-                            <td><a href="{{route('todos.destroy', $Todo->id)}}"><i class="bi bi-trash"></i></a></td>
+                            <td class=" fs-4">
+                                <i class="bi bi-emoji-angry alert-danger"></i>
+                                <i class="bi bi-emoji-smile alert-info"></i>
+                            </td>
+                            <td>
+                                <form action="{{ route('todos.destroy', $Todo->id) }}" method="POST">
+
+                                    <a href="{{ route('todos.show', $Todo->id) }}" title="show">
+                                        <i class="bi bi-eye text-success fs-4"></i>
+                                    </a>
+
+                                    <a href="{{ route('todos.edit', $Todo->id) }}">
+                                        <i class="bi bi-pencil-square fs-4"></i>
+                                    </a>
+
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" title="delete" style="border: none; background-color:transparent;">
+                                        <i class="bi bi-trash fs-4"></i>
+
+                                    </button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
 {{--			        <tr>--}}
