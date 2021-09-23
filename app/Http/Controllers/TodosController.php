@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Todos;
+use App\Models\Status;
 
 
 class TodosController extends Controller
@@ -15,7 +16,9 @@ class TodosController extends Controller
      */
     public function index()
     {
-        $List = Todos::paginate(6);
+
+        $List = Todos::paginate(5);
+
         return view('index', ['List' => $List]);
     }
 

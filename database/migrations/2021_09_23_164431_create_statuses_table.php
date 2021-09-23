@@ -15,7 +15,8 @@ class CreateStatusesTable extends Migration
     {
         Schema::create('statuses', function (Blueprint $table) {
             $table->id();
-            $table->boolean('confirmed');
+            $table->boolean('confirmed')->nullable();
+            $table->unsignedBigInteger('todos_id');
             $table->timestamps();
         });
     }
