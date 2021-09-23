@@ -9,7 +9,8 @@
             <div class="col-md-4">
                 <div class="border border-2 rounded border-info p-4">
                     <form method="post" action="{{route('todos.update', $todos->id)}}">
-
+                        @method('PUT')
+                        @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label">Задача</label>
                             <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="name" value="{{$todos->name}}">
@@ -22,8 +23,7 @@
                         </div>
                         <button type="submit" class="btn btn-info">Сохранить</button>
 
-                        @method('PATCH')
-                        @csrf
+
                     </form>
                 </div>
             </div>

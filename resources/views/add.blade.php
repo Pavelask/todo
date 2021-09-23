@@ -7,6 +7,18 @@
     <h3 class="text-center">Добавление задачи</h3>
     <div class="row d-flex justify-content-center">
         <div class="col-md-4">
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <div class="border border-2 rounded border-info p-4">
                 <form method="post" action="{{route('todos.store')}}">
                 @csrf

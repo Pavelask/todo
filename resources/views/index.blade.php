@@ -40,20 +40,20 @@
                             <td><i class="bi bi-trash"></i></td>
                         </tr>
                     @endforeach
-			        <tr>
-			            <th scope="row">1</th>
-			            <td>Задача один</td>
-                        <td class="alert-danger"><i class="bi bi-emoji-angry"></i></td>
-			            <td><i class="bi bi-trash"></i></td>
-			            <td><i class="bi bi-pencil-square"></i></td>
-			        </tr>
-			        <tr>
-			            <th scope="row">2</th>
-			            <td>Задача два</td>
-                        <td class=" alert-info"><i class="bi bi-emoji-smile"></i></td>
-			            <td><i class="bi bi-trash"></i></td>
-			            <td><i class="bi bi-pencil-square"></i></td>
-			        </tr>
+{{--			        <tr>--}}
+{{--			            <th scope="row">1</th>--}}
+{{--			            <td>Задача один</td>--}}
+{{--                        <td class="alert-danger"><i class="bi bi-emoji-angry"></i></td>--}}
+{{--			            <td><i class="bi bi-trash"></i></td>--}}
+{{--			            <td><i class="bi bi-pencil-square"></i></td>--}}
+{{--			        </tr>--}}
+{{--			        <tr>--}}
+{{--			            <th scope="row">2</th>--}}
+{{--			            <td>Задача два</td>--}}
+{{--                        <td class=" alert-info"><i class="bi bi-emoji-smile"></i></td>--}}
+{{--			            <td><i class="bi bi-trash"></i></td>--}}
+{{--			            <td><i class="bi bi-pencil-square"></i></td>--}}
+{{--			        </tr>--}}
 			        </tbody>
 			    </table>
 			</div>

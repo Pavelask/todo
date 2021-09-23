@@ -37,6 +37,9 @@ class TodosController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+        ]);
 
         $todoList = Todos::create($request->all());
 
@@ -75,7 +78,13 @@ class TodosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($request);
+
+        $request->validate([
+            'name' => 'required',
+        ]);
+
+        $todoList = Todos::where('id', $id)->update($request->all());
+        return redirect()->route(todos.index)->with('success', 'Запись добавлена');
     }
 
     /**
