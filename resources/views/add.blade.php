@@ -8,7 +8,7 @@
     <div class="row d-flex justify-content-center">
         <div class="col-md-4">
             <div class="border border-2 rounded border-info p-4">
-                <form method="post" action="{{route('store')}}">
+                <form method="post" action="{{route('todos.store')}}">
                 @csrf
                 @method('POST')
                     <div class="mb-3">

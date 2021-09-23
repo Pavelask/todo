@@ -15,7 +15,7 @@ class TodosController extends Controller
      */
     public function index()
     {
-        $List = Todos::all();
+        $List = Todos::paginate(6);
         return view('index', ['List' => $List]);
     }
 
@@ -39,7 +39,8 @@ class TodosController extends Controller
     {
 
         $todoList = Todos::create($request->all());
-        return redirect('/')->with('success', 'Запись добавлена');
+
+        return redirect('todos/')->with('success', 'Запись добавлена');
     }
 
     /**
@@ -61,7 +62,8 @@ class TodosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $todos = Todos::find($id);
+        return view('edit', ['todos' => $todos]);
     }
 
     /**
@@ -73,7 +75,7 @@ class TodosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd($request);
     }
 
     /**

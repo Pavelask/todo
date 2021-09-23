@@ -19,6 +19,7 @@ use App\Http\Controllers\TodosController;
 // });
 
 //Route::get('/', [TodosController::class, 'index']);
-Route::get('/add', [TodosController::class, 'create']);
+Route::get('todos/create', [TodosController::class, 'create']);
+//Route::get('todos/{id}/edit', [TodosController::class, 'edit']);
 
-Route::resource('/', '\App\Http\Controllers\TodosController');
+Route::resource('todos', 'TodosController');
