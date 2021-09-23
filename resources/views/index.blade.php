@@ -37,7 +37,7 @@
                             </td>
                             <td class="alert-danger"><i class="bi bi-emoji-angry"></i></td>
                             <td><a href="todos/{{$Todo->id}}/edit"><i class="bi bi-pencil-square"></i></a></td>
-                            <td><i class="bi bi-trash"></i></td>
+                            <td><a href="{{route('todos.destroy', $Todo->id)}}"><i class="bi bi-trash"></i></a></td>
                         </tr>
                     @endforeach
 {{--			        <tr>--}}

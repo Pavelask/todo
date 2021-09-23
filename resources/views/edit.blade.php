@@ -7,6 +7,9 @@
         <h3 class="text-center">Редактирование задачи</h3>
         <div class="row d-flex justify-content-center">
             <div class="col-md-4">
+                @if ($errors->any())
+                    @include('alerts.errorform')
+                @endif
                 <div class="border border-2 rounded border-info p-4">
                     <form method="post" action="{{route('todos.update', $todos->id)}}">
                         @method('PUT')

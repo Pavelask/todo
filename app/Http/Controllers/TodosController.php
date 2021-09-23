@@ -39,7 +39,10 @@ class TodosController extends Controller
     {
         $request->validate([
             'name' => 'required',
-        ]);
+        ],
+        [
+        'name.required' => 'Поле ЗАДАЧА обязателна к заполнению!']
+        );
 
         $todoList = Todos::create($request->all());
 
@@ -81,7 +84,10 @@ class TodosController extends Controller
 
         $request->validate([
             'name' => 'required',
-        ]);
+        ],
+        [
+            'name.required' => 'Поле ЗАДАЧА обязателна к заполнению!']
+        );
 
         $todoList = Todos::where('id', $id)->update($request->all());
         return redirect()->route(todos.index)->with('success', 'Запись добавлена');
@@ -95,6 +101,9 @@ class TodosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $todoList = Todos::where('id', $id)->delete();
+
+        return redirect()->route('todos.index')
+            ->with('success', 'Запись удалена!');
     }
 }
