@@ -5,6 +5,7 @@
 @section('content')
 <body>
     <div class="container my-4">
+        @include('alerts.erorr')
     <div class="row d-flex justify-content-center">
         <div class="col-md-6 border border-2 rounded border-info p-4">
             <div>

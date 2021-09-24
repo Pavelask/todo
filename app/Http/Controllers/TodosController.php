@@ -49,7 +49,7 @@ class TodosController extends Controller
 
         $todoList = Todos::create($request->all());
 
-        return redirect('todos/')->with('success', 'Запись добавлена');
+        return redirect('todos/')->with('success', 'Запись добавлена!');
     }
 
     /**
@@ -72,7 +72,12 @@ class TodosController extends Controller
     public function edit($id)
     {
         $todos = Todos::find($id);
-        return view('edit', ['todos' => $todos]);
+        if(!empty($todos)){
+            return view('edit', ['todos' => $todos]);
+        } else {
+            return redirect()->route('todos.index')->with('error', 'Запись c ID'.$id.' не найдена!');
+        }
+
     }
 
     /**
@@ -93,7 +98,7 @@ class TodosController extends Controller
         );
 
         $todoList = Todos::where('id', $id)->update($request->except(['_method', '_token']));
-        return redirect()->route('todos.index')->with('success', 'Запись добавлена');
+        return redirect()->route('todos.index')->with('success', 'Запись обновлена!');
     }
 
     /**
